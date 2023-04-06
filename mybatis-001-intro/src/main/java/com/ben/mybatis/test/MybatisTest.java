@@ -15,7 +15,7 @@ public class MybatisTest {
         //2. SqlSessionFactory对象, 需要抛出异常；
 //        InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
 //        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(is);
-        // 也可以写成一行；
+        // 也可以写成一行；InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(Resources.getResourceAsStream("mybatis-config.xml"));
 
         //3. 创建SqlSession对象

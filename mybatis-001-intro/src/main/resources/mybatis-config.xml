@@ -4,6 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+    <!--除了STDOUT_LOGGING自带日志组件外，其他组件不需要写日志设置-->
+    <settings>
+        <setting name="logImpl" value="SLF4J"/>
+    </settings>
+
     <environments default="development">
         <environment id="development">
             <!--<transactionManager type="MANAGED"/>-->
@@ -30,6 +35,7 @@
         <!--<mapper url="file:///d:/CarMapper.xml"/>-->
 
     </mappers>
+
 </configuration>
 
 

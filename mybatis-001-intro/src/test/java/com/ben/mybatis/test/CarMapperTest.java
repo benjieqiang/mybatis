@@ -1,5 +1,6 @@
 package com.ben.mybatis.test;
 
+import com.ben.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,6 +11,14 @@ import java.io.IOException;
 
 public class CarMapperTest {
 
+    @Test
+    public void testInsertCarUtil() {
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        int res = sqlSession.insert("insertCar");
+        System.out.println("插入结果是：" + res);
+        sqlSession.commit();
+        sqlSession.close();
+    }
     @Test
     public void testInsertCar() throws IOException {
         SqlSession sqlSession = null;
