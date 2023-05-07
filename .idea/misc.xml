@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/mybatis-001-intro/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-002-crud/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-004-webapp/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-005-crud2/pom.xml" />
       </list>
     </option>
   </component>
