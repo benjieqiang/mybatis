@@ -18,7 +18,6 @@ public class AccountDaoImpl implements AccountDao {
     public Account selectByActno(String actno) {
         SqlSession session = SqlSessionUtil.openSession();
         Account account = session.selectOne("com.ben.bank.dao.AccountDao.selectByActno", actno);
-        session.close();
         return account;
     }
 
@@ -26,7 +25,6 @@ public class AccountDaoImpl implements AccountDao {
     public int updateAccount(Account account) {
         SqlSession session = SqlSessionUtil.openSession();
         int count = session.update("com.ben.bank.dao.AccountDao.updateByActno", account);
-        session.commit();
         return count;
     }
 
@@ -34,7 +32,6 @@ public class AccountDaoImpl implements AccountDao {
     public int insertAccount(Account account) {
         SqlSession session = SqlSessionUtil.openSession();
         int count = session.insert("com.ben.bank.dao.AccountDao.insertAct", account);
-        session.commit();
         return count;
     }
 }
