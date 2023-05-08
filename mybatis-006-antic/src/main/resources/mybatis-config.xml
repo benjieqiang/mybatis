@@ -5,6 +5,15 @@
 
 <configuration>
     <properties resource="jdbc.properties"/>
+    <typeAliases>
+        <!--方法1：typeAlias，可以写多个，给type起别名，可以直接用alias名称读取到-->
+        <!--        <typeAlias type="com.ben.mybatis.pojo.Car" alias="car"/>-->
+        <!--简写：省略alias，默认类简名，比如car-->
+        <!--        <typeAlias type="com.ben.mybatis.pojo.Car"/>-->
+        <!--方法2：利用package，包下所有类自动起别名，不区分大小写-->
+        <package name="com.ben.mybatis.pojo"/>
+
+    </typeAliases>
     <environments default="dev">
         <environment id="dev">
             <transactionManager type="JDBC"/>
@@ -17,7 +26,15 @@
         </environment>
     </environments>
     <mappers>
+<!--        &lt;!&ndash;方法1：类的根目录下查找CarMapper.xml文件&ndash;&gt;-->
         <mapper resource="CarMapper.xml"/>
+<!--        &lt;!&ndash;方法2：绝对路径查找，不推荐&ndash;&gt;-->
+<!--        <mapper url="file://D:/CarMapper.xml"/>-->
+<!--        &lt;!&ndash;方法3： 查找映射接口同级目录下的Mapper.xml文件&ndash;&gt;-->
+<!--        &lt;!&ndash;   com/ben/mybatis/mapper 建包需要这样建&ndash;&gt;-->
+<!--        <mapper class="com.ben.mybatis.mapper.CarMapper"/>-->
+<!--        &lt;!&ndash;方法4：推荐：将包内的映射器接⼝实现全部注册为映射器，在resource下的路径自动查找接口对应xml文件&ndash;&gt;-->
+<!--        <package name="com.ben.mybatis.mapper"/>-->
     </mappers>
 
 </configuration>

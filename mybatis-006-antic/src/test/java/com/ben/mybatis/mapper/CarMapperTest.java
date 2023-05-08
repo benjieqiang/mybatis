@@ -23,6 +23,17 @@ public class CarMapperTest {
         session.commit();
         session.close();
     }
+    @Test
+    public void testInsertGetCarId() {
+        SqlSession session = SqlSessionUtil.openSession();
+        CarMapper mapper = session.getMapper(CarMapper.class);
+        Car car = new Car(null,"1331","台铃",12.00,"2022-01-01", "电动车");
+        mapper.insertCarUseGeneratedKeys(car);
+        System.out.println(car); //Car{id=64, carNum='1331', brand='台铃', guidePrice=12.0, produceTime='2022-01-01', carType='电动车'}
+
+        session.commit();
+        session.close();
+    }
 
     @Test
     public void testSelectById() {
