@@ -1,6 +1,6 @@
 package com.ben.mybatis.mapper;
 
-import com.ben.bank.utils.SqlSessionUtil;
+import com.ben.mybatis.utils.SqlSessionUtil;
 import com.ben.mybatis.pojo.Car;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
